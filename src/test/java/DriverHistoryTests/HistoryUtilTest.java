@@ -3,36 +3,21 @@ package DriverHistoryTests;
 import com.DriverHistory.Driver;
 import com.DriverHistory.HistoryUtil;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 
 import java.io.IOException;
-
-import static org.mockito.Mockito.*;
+import java.io.PrintWriter;
 
 public class HistoryUtilTest {
-
-    public HistoryUtil histUtilTest = mock(HistoryUtil.class);
 
     HistoryUtil histUtil = new HistoryUtil();
 
 
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    public void loadTripInfoTest() throws IOException {
-        histUtilTest.loadTripInfo();
-        verify(histUtilTest, atLeastOnce()).loadTripInfo();
-    }
-
-    @Test
-    public void setDriverDetailsTest() {
-        histUtilTest.findAndSetDriverDetails();
-        verify(histUtilTest, atLeastOnce()).findAndSetDriverDetails();
+    @BeforeClass
+    public void setUp() throws IOException{
+        HistoryUtil histUtil = new HistoryUtil();
+        histUtil.loadTripInfo();
     }
 
     @Test
@@ -47,13 +32,7 @@ public class HistoryUtilTest {
         testDriver.setFirstName("mary");
         histUtil.doesTripQualifyForReporting(testDriver);
         testSpeed = testDriver.getSpeed();
-        Assert.assertNull(testSpeed);
-    }
-
-    @Test
-    public void createOutputTest() throws IOException{
-        histUtilTest.createOutput();
-        verify(histUtilTest, atLeastOnce()).createOutput();
+        Assert.assertEquals(0, testSpeed, .0001);
     }
 
     @Test
@@ -77,6 +56,22 @@ public class HistoryUtilTest {
         Assert.assertEquals(false, testResultSlow);
         Assert.assertEquals(true, testResultJustRight);
         Assert.assertEquals(false, testResultFast);
+    }
+
+    @Test
+    public void createOutputTest() throws IOException{
+        //will test that all methods work together cohesively and create appropriate data in output file
+        Driver testDriver = new Driver();
+        testDriver.setFirstName("Alex");
+        histUtil.loadTripInfo();
+        histUtil.findAndSetDriverDetails();
+        histUtil.doesTripQualifyForReporting(testDriver);
+        histUtil.createOutput();
+    }
+
+    @Test
+    public void clearOutTestData()throws IOException{
+        new PrintWriter("Trip_Downstream.txt").close();
     }
 
 }
