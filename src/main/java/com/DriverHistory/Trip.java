@@ -2,21 +2,11 @@ package com.DriverHistory;
 
 public class Trip {
 
-    private int tripID;
     private String driverIdentifier;
     private double milesDriven;
-    private double speed;
     private String startTime;
     private String endTime;
-    private String timeTaken;
-
-    public int getTripID(){
-        return tripID;
-    }
-
-    public void setTripID(int tripID){
-        this.tripID = tripID;
-    }
+    private boolean qualifyToReport;
 
     public void setDriverIdentifier(String driverIdentifier) {
         this.driverIdentifier = driverIdentifier;
@@ -35,14 +25,6 @@ public class Trip {
         this.milesDriven = milesDriven;
     }
 
-    public double getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(double speed){
-        this.speed = speed;
-    }
-
     public String getStartTime() {
         return startTime;
     }
@@ -59,11 +41,11 @@ public class Trip {
         this.endTime = endTime;
     }
 
-    public String getTimeTaken() {
-        return timeTaken;
+    public boolean isQualifyToReport() {
+        return qualifyToReport;
     }
 
-    public void setTimeTaken(String timeTaken){
-        this.timeTaken = timeTaken;
+    public void setQualifyToReport(boolean qualifyToReport) {
+        this.qualifyToReport = qualifyToReport;
     }
 }
