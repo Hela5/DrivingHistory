@@ -1,7 +1,7 @@
 package DriverHistoryTests;
 
 import com.DriverHistory.Driver;
-import com.DriverHistory.HistoryUtil;
+import com.DriverHistory.HistoryHelper;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class HistoryUtilTest {
+public class HistoryHelperTest {
 
-    HistoryUtil histUtil = new HistoryUtil();
+    HistoryHelper histUtil = new HistoryHelper();
 
 
     @BeforeClass
     public void setUp() throws IOException{
-        HistoryUtil histUtil = new HistoryUtil();
+        HistoryHelper histUtil = new HistoryHelper();
         histUtil.loadTripInfo();
     }
 

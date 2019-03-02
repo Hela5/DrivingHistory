@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class HistoryUtil {
+public class HistoryHelper {
 
     private final static String DELIMITER = " ";
     private ArrayList<Trip> bulkTrip = new ArrayList<>();
