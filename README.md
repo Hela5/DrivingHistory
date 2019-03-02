@@ -3,7 +3,9 @@
 Hello!
 
 I wrote this program in Java, the language I am most comfortable with, using the IntelliJ IDE. 
-In DrivingHistory, I have created a Utility class to parse through an input file, store and manipulate data. Ultimately sending it back out in a new file and different format. 
+It's overall design is based mostly off of MVC pattern with lightweight structure and abstractions. I chose to focus on the business logic for storing and processing the data. 
+
+In this DrivingHistory project, I have created a Helper class to parse through an input file, store and manipulate data. Ultimately sending it back out in a new file and different format. I chose 'Helper' because I assume it would ultimately be consumed by a larger fuctionality, satisfying an equally larger set of requirements.
 As for naming, I tried to keep field names and method names as verbose and clearly stated as possible. 
 Comments make life easier and I added them liberally throughout code. 
 
