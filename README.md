@@ -14,7 +14,7 @@ I start at the beginning of list of drivers. Then iterate through all related tr
 To create output, I read the data off of each Driver. 
 
 Testing:
-For testing, I used the traditional way of testing with Asserts to ensure each smaller method worked.
+I used the traditional way of testing with Asserts to ensure each smaller method worked.
 For overall testing I had to get a bit creative to ensure necessary methods can run successfully together, producing desired results. 
 The "createOutputTest()" does that since there's no UI or other way to ensure data's being captured and processed correctly.
 I also added one last "test" called 'clearOutTestData' to clean up the output file after all tests have been run. 
